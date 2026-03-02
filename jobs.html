@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Proctorix Jobs | Find Verified Roles & Secure Hiring</title>
+    <meta name="title" content="Proctorix Jobs | Find Verified Roles & Secure Hiring">
+    <meta name="description" content="Apply to top tech companies with your verified Proctorix assessment scores. The world's first AI-proctored job board powered by Xeta Tech Solutions.">
+    <meta name="keywords" content="jobs, tech jobs, remote jobs, software developer, proctorix, secure hiring, xeta tech solutions, verified skills, AI shortlisting">
+    <meta name="author" content="Xeta Tech Solutions">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .job-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #6366f1;
+        }
+
+        #preloader { transition: transform 0.8s cubic-bezier(0.76,0,0.24,1); }
+        
+        /* Modal Transitions */
+        .modal-overlay { transition: opacity 0.3s ease-in-out; }
+        .modal-content { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-indigo-200 selection:text-indigo-900 flex flex-col min-h-screen">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center">
+        <div class="relative flex items-center justify-center mb-6 animate-pulse">
+            <div class="absolute inset-0 bg-indigo-100 rounded-full blur-[40px]"></div>
+            <i data-lucide="briefcase" class="w-16 h-16 text-indigo-600 relative z-10"></i>
+        </div>
+        <h1 class="text-3xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+            jobs.proctorix.in
+        </h1>
+        <p class="text-xs text-slate-500 font-bold uppercase tracking-widest mt-4">By Xeta Tech Solutions</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <div class="bg-indigo-600 p-2 rounded-xl text-white shadow-lg shadow-indigo-200">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-black tracking-tight leading-none">Proctorix<span class="text-indigo-600">Jobs</span></span>
+                        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">By Xeta Tech</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                    <a href="#" class="text-indigo-600">Find Jobs</a>
+                    <a href="#" onclick="openCompaniesModal(event)" class="hover:text-indigo-600 transition-colors">Companies</a>
+                    <a href="#" onclick="openCareerModal(event)" class="hover:text-indigo-600 transition-colors">Career Advice</a>
+                    <a href="https://proctorix.in" target="_blank" class="hover:text-indigo-600 transition-colors">Proctorix Platform</a>
+                </div>
+
+                <!-- Auth Buttons -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="openAuthModal('login')" class="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors">Sign In</button>
+                    <button onclick="openAuthModal('register')" class="text-sm font-bold bg-slate-900 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-600 transition-all shadow-md">
+                        Post a Job
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-900 hover:text-indigo-600 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+        
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-32 overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
+            <div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-indigo-100/50 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up" style="animation-delay: 0.2s;">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-8 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Platform Launching Soon
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+                    Your Skills, <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Verified.</span><br/>
+                    Your Next Job, <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Secured.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    We are building the world's first skill-verified job board. Apply to top companies using your Proctorix assessment scores and get fast-tracked to interviews.
+                </p>
+
+                <!-- Search Box -->
+                <div class="max-w-4xl mx-auto bg-white p-3 rounded-2xl md:rounded-full shadow-2xl shadow-indigo-100 border border-slate-100 flex flex-col md:flex-row gap-3">
+                    <div class="flex-grow flex items-center px-4 py-2 border-b md:border-b-0 md:border-r border-slate-100">
+                        <i data-lucide="search" class="w-5 h-5 text-slate-400 shrink-0"></i>
+                        <input type="text" placeholder="Job title, keywords, or company..." class="w-full bg-transparent border-none outline-none px-3 text-slate-700 placeholder-slate-400 font-medium">
+                    </div>
+                    <div class="flex-grow flex items-center px-4 py-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-slate-400 shrink-0"></i>
+                        <input type="text" placeholder="City, state, or 'Remote'" class="w-full bg-transparent border-none outline-none px-3 text-slate-700 placeholder-slate-400 font-medium">
+                    </div>
+                    <button onclick="openComingSoonModal()" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl md:rounded-full hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 shrink-0 flex items-center justify-center gap-2">
+                        Find Jobs
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats / Trust Section -->
+        <section class="border-y border-slate-200 bg-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-100">
+                    <div>
+                        <div class="text-3xl font-black text-slate-900 mb-1">500+</div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Partner Companies</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-slate-900 mb-1">100%</div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Skill Verified</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-indigo-600 mb-1">3x</div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Faster Hiring</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-slate-900 mb-1">0</div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Fake Profiles</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Jobs Section -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-black text-slate-900 mb-2">Preview Roles</h2>
+                    <p class="text-slate-500 font-medium">A sneak peek at the types of roles that will be available upon launch.</p>
+                </div>
+            </div>
+
+            <!-- Job Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Job Card 1 -->
+                <article class="job-card bg-white p-6 rounded-3xl border border-slate-200 flex flex-col h-full cursor-pointer relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-indigo-50 text-indigo-700 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-xl z-10">Preview</div>
+                    
+                    <div class="flex gap-4 items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors">
+                            <i data-lucide="layout-template" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 leading-tight mb-1">Senior React Developer</h3>
+                            <p class="text-sm text-slate-500 font-medium">TechNova Systems</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold">Remote</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold">Full-Time</span>
+                        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-100 flex items-center gap-1">
+                            <i data-lucide="shield-check" class="w-3 h-3"></i> Proctorix Required
+                        </span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <div class="font-black text-slate-900">$120k - $150k</div>
+                        <button onclick="openComingSoonModal()" class="text-indigo-600 bg-indigo-50 hover:bg-indigo-600 hover:text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">Apply Now</button>
+                    </div>
+                </article>
+
+                <!-- Job Card 2 -->
+                <article class="job-card bg-white p-6 rounded-3xl border border-slate-200 flex flex-col h-full cursor-pointer relative overflow-hidden group">
+                    <div class="flex gap-4 items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors">
+                            <i data-lucide="database" class="w-6 h-6 text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 leading-tight mb-1">Backend Engineer (Node)</h3>
+                            <p class="text-sm text-slate-500 font-medium">FinTech Global</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold">Bangalore, IN</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold">Hybrid</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-100">Fast Track</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <div class="font-black text-slate-900">₹18L - ₹24L</div>
+                        <button onclick="openComingSoonModal()" class="text-indigo-600 bg-indigo-50 hover:bg-indigo-600 hover:text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">Apply Now</button>
+                    </div>
+                </article>
+
+                <!-- Job Card 3 -->
+                <article class="job-card bg-white p-6 rounded-3xl border border-slate-200 flex flex-col h-full cursor-pointer relative overflow-hidden group justify-center items-center text-center">
+                    <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-indigo-50 transition-colors">
+                        <i data-lucide="search-check" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-slate-900 mb-2">Want to be the first?</h3>
+                    <p class="text-sm text-slate-500 mb-6 px-4">Register now to generate your profile. Be notified the moment we go live.</p>
+                    <button onclick="openAuthModal('register')" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-600 transition-colors">
+                        Create Profile / Join Waitlist
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- End-to-End Pipeline Section -->
+        <section class="py-24 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] -z-10 translate-x-1/3 -translate-y-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[100px] -z-10 -translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-widest mb-6 border border-indigo-200">
+                        <i data-lucide="workflow" class="w-4 h-4"></i> One Platform. Zero Friction.
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">The End-to-End Hiring Pipeline</h2>
+                    <p class="text-lg text-slate-500 leading-relaxed">
+                        Experience the entire recruitment lifecycle without ever leaving Proctorix. From the first application to the final offer letter, our AI and secure proctoring engine manages it all.
+                    </p>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-200 via-indigo-500 to-blue-500 md:-translate-x-1/2 rounded-full"></div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%] text-right pr-12">
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">1. Job Launch & Application</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Companies publish roles directly on our portal. Candidates apply with a single click, bringing their verified Proctorix history with them.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center -translate-x-1/2 shadow-lg shadow-indigo-200 z-10 group-hover:scale-110 transition-transform">
+                            <i data-lucide="rocket" class="w-5 h-5 text-indigo-600"></i>
+                        </div>
+                        <div class="pl-20 md:hidden mb-2 w-full">
+                            <h3 class="text-xl font-black text-slate-900 mb-1">1. Job Launch & Application</h3>
+                            <p class="text-slate-500 text-sm">Companies publish roles; candidates apply instantly.</p>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%]"></div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-indigo-600 border-4 border-indigo-200 rounded-full flex items-center justify-center -translate-x-1/2 shadow-lg shadow-indigo-300 z-10 group-hover:scale-110 transition-transform">
+                            <i data-lucide="bot" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div class="pl-20 md:pl-12 md:w-[45%]">
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">2. AI Review & Shortlisting</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">The Proctorix AI automatically analyzes resumes, past scores, and profiles. Interviewers receive an instant, bias-free ranked list of top candidates.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%] text-right pr-12">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Round 1</div>
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">Communication Module</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">An automated, AI-driven test to evaluate spoken and written fluency, pronunciation, and professional vocabulary.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-slate-300 rounded-full flex items-center justify-center -translate-x-1/2 shadow-sm z-10 group-hover:border-indigo-500 transition-colors">
+                            <i data-lucide="mic" class="w-5 h-5 text-slate-600 group-hover:text-indigo-600 transition-colors"></i>
+                        </div>
+                        <div class="pl-20 md:hidden mb-2 w-full">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2">Round 1</div>
+                            <h3 class="text-xl font-black text-slate-900 mb-1">Communication</h3>
+                            <p class="text-slate-500 text-sm">Automated AI fluency & vocabulary testing.</p>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%]"></div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-slate-300 rounded-full flex items-center justify-center -translate-x-1/2 shadow-sm z-10 group-hover:border-indigo-500 transition-colors">
+                            <i data-lucide="brain" class="w-5 h-5 text-slate-600 group-hover:text-indigo-600 transition-colors"></i>
+                        </div>
+                        <div class="pl-20 md:pl-12 md:w-[45%]">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Round 2</div>
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">Aptitude & Reasoning</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Secure, proctored assessments measuring cognitive abilities, logical reasoning, and quantitative skills.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%] text-right pr-12">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Round 3</div>
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">Technical MCQ's</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Deep-dive into core domain knowledge with dynamic, randomized question banks to prevent cheating.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-slate-300 rounded-full flex items-center justify-center -translate-x-1/2 shadow-sm z-10 group-hover:border-indigo-500 transition-colors">
+                            <i data-lucide="file-check-2" class="w-5 h-5 text-slate-600 group-hover:text-indigo-600 transition-colors"></i>
+                        </div>
+                        <div class="pl-20 md:hidden mb-2 w-full">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2">Round 3</div>
+                            <h3 class="text-xl font-black text-slate-900 mb-1">Technical MCQ's</h3>
+                            <p class="text-slate-500 text-sm">Proctored domain knowledge assessments.</p>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%]"></div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-slate-300 rounded-full flex items-center justify-center -translate-x-1/2 shadow-sm z-10 group-hover:border-indigo-500 transition-colors">
+                            <i data-lucide="code-2" class="w-5 h-5 text-slate-600 group-hover:text-indigo-600 transition-colors"></i>
+                        </div>
+                        <div class="pl-20 md:pl-12 md:w-[45%]">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Round 4</div>
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">Live Coding</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Integrated IDE supporting 40+ languages. Auto-evaluated test cases with full screen-lock and tab-tracking security.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%] text-right pr-12">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Round 5</div>
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">L2 Tech Interview</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">A live, face-to-face technical interview on our built-in video platform featuring collaborative whiteboarding and code pairing.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-slate-300 rounded-full flex items-center justify-center -translate-x-1/2 shadow-sm z-10 group-hover:border-indigo-500 transition-colors">
+                            <i data-lucide="monitor-play" class="w-5 h-5 text-slate-600 group-hover:text-indigo-600 transition-colors"></i>
+                        </div>
+                        <div class="pl-20 md:hidden mb-2 w-full">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2">Round 5</div>
+                            <h3 class="text-xl font-black text-slate-900 mb-1">L2 Tech Interview</h3>
+                            <p class="text-slate-500 text-sm">Live video interview with collaborative code pairing.</p>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-16 group">
+                        <div class="hidden md:block md:w-[45%]"></div>
+                        <div class="absolute left-6 md:left-1/2 w-12 h-12 bg-white border-4 border-slate-300 rounded-full flex items-center justify-center -translate-x-1/2 shadow-sm z-10 group-hover:border-indigo-500 transition-colors">
+                            <i data-lucide="users" class="w-5 h-5 text-slate-600 group-hover:text-indigo-600 transition-colors"></i>
+                        </div>
+                        <div class="pl-20 md:pl-12 md:w-[45%]">
+                            <div class="inline-block bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Round 6</div>
+                            <h3 class="text-2xl font-black text-slate-900 mb-2">Final Interview</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">The ultimate HR/Cultural fit interview, recorded and logged directly into the candidate's Proctorix profile for compliance.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between group">
+                        <div class="hidden md:block md:w-[45%] text-right pr-12">
+                            <h3 class="text-2xl font-black text-blue-600 mb-2">Onboarding</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">Offers are rolled out and accepted. The candidate seamlessly transitions into your workforce, with all data synced to your HRMS.</p>
+                        </div>
+                        <div class="absolute left-6 md:left-1/2 w-14 h-14 bg-gradient-to-r from-indigo-600 to-blue-500 border-4 border-white rounded-full flex items-center justify-center -translate-x-1/2 shadow-xl z-10 group-hover:scale-110 transition-transform">
+                            <i data-lucide="party-popper" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="pl-20 md:hidden w-full">
+                            <h3 class="text-xl font-black text-blue-600 mb-1">Onboarding</h3>
+                            <p class="text-slate-500 text-sm">Seamless hiring and HRMS data sync.</p>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Proctorix Advantage Section -->
+        <section class="py-24 bg-indigo-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/30 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="inline-block bg-indigo-800 text-indigo-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-indigo-700 mb-6">Why Apply Here?</div>
+                        <h2 class="text-4xl lg:text-5xl font-black mb-6 leading-tight">The world's only <br/><span class="text-indigo-400">skill-first</span> job platform.</h2>
+                        <p class="text-indigo-100 text-lg mb-8 leading-relaxed">
+                            Stop formatting your resume to beat ATS bots. Proctorix Jobs connects you directly with employers who trust our secure assessment engine. Prove your skills once, apply anywhere.
+                        </p>
+                        
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <div class="w-12 h-12 bg-indigo-800 rounded-xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="shield-check" class="w-6 h-6 text-indigo-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-1">Verified Credentials</h4>
+                                    <p class="text-indigo-200 text-sm">Your test scores are permanently secured and verified.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="w-12 h-12 bg-indigo-800 rounded-xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="zap" class="w-6 h-6 text-indigo-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-1">Fast-Tracked Interviews</h4>
+                                    <p class="text-indigo-200 text-sm">Candidates with Proctorix scores skip the initial technical screening.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Decorative Graphic -->
+                    <div class="relative">
+                        <div class="bg-indigo-950/50 backdrop-blur-md p-8 rounded-[2rem] border border-indigo-500/30 shadow-2xl relative z-10 animate-float">
+                            <div class="flex justify-between items-center mb-8 border-b border-indigo-800/50 pb-4">
+                                <div>
+                                    <h3 class="font-black text-lg">Candidate Passport</h3>
+                                    <p class="text-xs text-indigo-300">Global Verification</p>
+                                </div>
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center font-bold">
+                                    <i data-lucide="fingerprint" class="w-6 h-6"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-indigo-900/50 p-4 rounded-xl flex justify-between items-center border border-indigo-800">
+                                    <div>
+                                        <div class="font-bold text-sm">Identity & Credentials</div>
+                                        <div class="text-xs text-indigo-300 mt-1">Cross-platform validated</div>
+                                    </div>
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                </div>
+                                <div class="bg-indigo-900/50 p-4 rounded-xl flex justify-between items-center border border-indigo-800">
+                                    <div>
+                                        <div class="font-bold text-sm">Verified Skill Scores</div>
+                                        <div class="text-xs text-indigo-300 mt-1">Immutable records</div>
+                                    </div>
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                                </div>
+                            </div>
+                            
+                            <button onclick="openPassportModal()" class="w-full mt-8 bg-white text-indigo-900 py-4 rounded-xl font-bold hover:bg-indigo-50 transition-colors shadow-lg flex justify-center gap-2 items-center">
+                                Generate Your Passport <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="absolute top-10 -right-10 w-24 h-24 bg-blue-500 rounded-full blur-[40px] z-0"></div>
+                        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-500 rounded-full blur-[50px] z-0"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10 border-t-[8px] border-indigo-600 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-indigo-400"></i>
+                        <span class="text-2xl font-black tracking-tight">Proctorix<span class="text-indigo-500">Jobs</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Connecting verified talent with global opportunities. The hiring platform built on proof, not promises.
+                    </p>
+                    <div class="flex gap-3">
+                        <button class="p-2.5 bg-white/5 hover:bg-indigo-600 rounded-xl transition-colors"><i data-lucide="linkedin" class="w-5 h-5 text-slate-300"></i></button>
+                        <button class="p-2.5 bg-white/5 hover:bg-indigo-600 rounded-xl transition-colors"><i data-lucide="twitter" class="w-5 h-5 text-slate-300"></i></button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-black mb-6 text-white uppercase text-xs tracking-widest">Candidates</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm font-medium">
+                        <li><a href="#" onclick="openComingSoonModal(event)" class="hover:text-indigo-400 transition-colors">Browse All Jobs</a></li>
+                        <li><a href="#" onclick="openPassportModal()" class="hover:text-indigo-400 transition-colors">Generate Passport</a></li>
+                        <li><a href="#" onclick="openCareerModal(event)" class="hover:text-indigo-400 transition-colors">Career Advice</a></li>
+                        <li><a href="#" onclick="openAuthModal('login')" class="hover:text-indigo-400 transition-colors">Candidate Login</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-black mb-6 text-white uppercase text-xs tracking-widest">Employers</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm font-medium">
+                        <li><a href="#" onclick="openAuthModal('register')" class="hover:text-indigo-400 transition-colors">Post a Job</a></li>
+                        <li><a href="#" onclick="openCompaniesModal(event)" class="hover:text-indigo-400 transition-colors">Search Verified Profiles</a></li>
+                        <li><a href="https://proctorix.in" target="_blank" class="hover:text-indigo-400 transition-colors flex items-center gap-1">Proctorix Platform <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+                        <li><a href="#" onclick="openAuthModal('login')" class="hover:text-indigo-400 transition-colors">Employer Login</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-black mb-6 text-white uppercase text-xs tracking-widest">Get Updates</h4>
+                    <p class="text-sm text-slate-400 mb-4">Get notified when the job portal goes fully live.</p>
+                    <form onsubmit="handleAuthSubmit(event)" class="flex">
+                        <input type="email" name="email" placeholder="Email address" required class="bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 w-full text-sm outline-none focus:border-indigo-500">
+                        <button type="submit" class="bg-indigo-600 px-4 py-2 rounded-r-xl hover:bg-indigo-700 transition-colors">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-slate-500 text-xs font-medium gap-4">
+                <div class="flex flex-col gap-1 text-center md:text-left">
+                    <p>© <script>document.write(new Date().getFullYear())</script> Proctorix Jobs. All rights reserved.</p>
+                    <p>A proud product by <a href="https://xetasolutions.in" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-bold transition-colors">Xeta Tech Solutions</a>.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal (Login / Register) -->
+    <div id="auth-modal" class="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 modal-overlay">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform scale-95 transition-transform duration-300 modal-content" id="auth-content-box">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 bg-slate-100 rounded-full p-2 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Tabs -->
+            <div class="flex bg-slate-100 p-1 rounded-xl mb-8">
+                <button id="tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white shadow text-slate-900 transition-all">Sign In</button>
+                <button id="tab-register" onclick="switchAuthTab('register')" class="flex-1 py-2 text-sm font-bold rounded-lg text-slate-500 hover:text-slate-900 transition-all">Register</button>
+            </div>
+
+            <form id="auth-form" class="space-y-4" onsubmit="handleAuthSubmit(event)">
+                <div class="text-center mb-6">
+                    <h3 id="auth-title" class="text-2xl font-black mb-2 text-slate-900">Welcome Back</h3>
+                    <p id="auth-desc" class="text-slate-500 text-sm">Enter your details to access your account.</p>
+                </div>
+
+                <!-- Register Specific Fields -->
+                <div id="register-fields" class="hidden space-y-4 mb-4 animate-fade-in">
+                    <div class="relative">
+                        <i data-lucide="user" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="text" name="name" id="auth-name" placeholder="Full Name" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="phone" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="tel" name="phone" id="auth-phone" placeholder="Phone Number" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative">
+                            <i data-lucide="clock" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                            <input type="text" name="experience" id="auth-exp" placeholder="Years of Exp." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                        </div>
+                        <div class="relative">
+                            <i data-lucide="linkedin" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                            <input type="url" name="linkedin" id="auth-linkedin" placeholder="LinkedIn URL" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="briefcase" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <select name="role" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-slate-600 bg-white appearance-none">
+                            <option value="candidate">I am a Candidate</option>
+                            <option value="employer">I am an Employer</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Common Fields -->
+                <div class="relative">
+                    <i data-lucide="mail" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                    <input type="email" name="email" placeholder="Email Address" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div class="relative">
+                    <i data-lucide="lock" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                    <input type="password" name="password" placeholder="Password" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+
+                <input type="hidden" name="form_type" id="auth-form-type" value="login">
+
+                <button type="submit" id="auth-submit-btn" class="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg flex justify-center items-center gap-2 mt-4">
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Passport Generation Modal -->
+    <div id="passport-modal" class="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 modal-overlay">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform scale-95 transition-transform duration-300 modal-content" id="passport-content-box">
+            <button onclick="closePassportModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 bg-slate-100 rounded-full p-2 transition-colors z-20">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Step 1: Data Collection Form -->
+            <div id="passport-step-1">
+                <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3 shadow-inner">
+                    <i data-lucide="fingerprint" class="text-indigo-600 w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-2 text-center text-slate-900">Generate Passport</h3>
+                <p class="text-slate-500 mb-8 text-center text-sm">Enter your details to instantly generate your secure Proctorix hiring passport.</p>
+                <form id="passport-form" class="space-y-4" onsubmit="handlePassportSubmit(event)">
+                    <div class="relative">
+                        <i data-lucide="user" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="text" name="name" id="pp-name" placeholder="Full Name" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="mail" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="email" name="email" id="pp-email" placeholder="Email Address" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="code" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="text" name="skill" id="pp-skill" placeholder="Primary Skill (e.g. React JS)" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div class="relative">
+                        <i data-lucide="bar-chart" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <select name="experience_level" id="pp-exp" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-slate-600 bg-white appearance-none">
+                            <option value="" disabled selected>Select Experience Level</option>
+                            <option value="Entry Level (0-2 yrs)">Entry Level (0-2 yrs)</option>
+                            <option value="Mid Level (3-5 yrs)">Mid Level (3-5 yrs)</option>
+                            <option value="Senior Level (5+ yrs)">Senior Level (5+ yrs)</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="form_type" value="passport_generation">
+                    <button type="submit" id="passport-submit-btn" class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-600 transition-all shadow-lg mt-4 flex justify-center items-center gap-2">
+                        Generate Passport
+                    </button>
+                </form>
+            </div>
+
+            <!-- Step 2: Generated Visual Passport UI -->
+            <div id="passport-step-2" class="hidden animate-fade-in w-full max-w-sm mx-auto">
+                <h3 class="text-2xl font-black mb-6 text-center text-slate-900">Your Passport is Ready!</h3>
+                
+                <!-- The Advanced Visual ID Card -->
+                <div class="relative w-full rounded-[2rem] p-[3px] bg-gradient-to-br from-indigo-500 via-purple-500 to-emerald-400 mb-8 shadow-2xl group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent rounded-[2rem] opacity-50 pointer-events-none mix-blend-overlay"></div>
+                    
+                    <div class="bg-slate-950 w-full h-full rounded-[1.8rem] p-6 relative overflow-hidden flex flex-col justify-between z-10">
+                        <!-- Subtle Grid Background inside card -->
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 16px 16px;"></div>
+                        
+                        <!-- Header -->
+                        <div class="flex justify-between items-start mb-6 relative z-10">
+                            <div class="flex items-center gap-2">
+                                <div class="bg-indigo-600 p-1.5 rounded-lg shadow-[0_0_15px_rgba(79,70,229,0.5)]">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-white"></i>
+                                </div>
+                                <span class="font-black tracking-widest text-xs uppercase text-white">Proctorix Global</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-[8px] text-slate-400 uppercase tracking-widest">Passport ID</span>
+                                <span class="text-xs text-indigo-300 font-mono font-bold tracking-wider">PRX-<span id="pp-random-id"></span></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Profile Section -->
+                        <div class="flex gap-4 items-center mb-6 relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center font-black text-2xl shadow-inner uppercase tracking-tighter text-white border-2 border-white/10" id="pp-avatar">
+                                JD
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-black text-white leading-tight mb-1" id="pp-display-name">John Doe</h4>
+                                <p class="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1" id="pp-display-skill">React Developer</p>
+                                <p class="text-slate-400 text-[10px] uppercase tracking-widest" id="pp-display-exp">Senior Level</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Footer Details -->
+                        <div class="relative z-10 pt-4 border-t border-white/10 flex justify-between items-end">
+                            <div>
+                                <div class="flex gap-4 mb-2">
+                                    <div>
+                                        <div class="text-[8px] text-slate-500 uppercase tracking-widest">Issued</div>
+                                        <div class="text-xs text-white font-mono" id="pp-issue-date"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[8px] text-slate-500 uppercase tracking-widest">Expires</div>
+                                        <div class="text-xs text-white font-mono" id="pp-expiry-date"></div>
+                                    </div>
+                                </div>
+                                <div class="text-[10px] font-bold text-emerald-400 flex items-center gap-1 bg-emerald-400/10 px-2 py-0.5 rounded-md w-fit">
+                                    <i data-lucide="check-circle-2" class="w-3 h-3"></i> AI Verified
+                                </div>
+                            </div>
+                            <!-- Fake Barcode -->
+                            <div class="opacity-50">
+                                <svg width="60" height="20" viewBox="0 0 60 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" y="0" width="2" height="20"/>
+                                    <rect x="4" y="0" width="4" height="20"/>
+                                    <rect x="10" y="0" width="2" height="20"/>
+                                    <rect x="14" y="0" width="1" height="20"/>
+                                    <rect x="18" y="0" width="6" height="20"/>
+                                    <rect x="26" y="0" width="2" height="20"/>
+                                    <rect x="30" y="0" width="3" height="20"/>
+                                    <rect x="35" y="0" width="5" height="20"/>
+                                    <rect x="42" y="0" width="2" height="20"/>
+                                    <rect x="46" y="0" width="4" height="20"/>
+                                    <rect x="52" y="0" width="1" height="20"/>
+                                    <rect x="55" y="0" width="3" height="20"/>
+                                    <rect x="59" y="0" width="1" height="20"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-center text-slate-500 mb-6">This high-security passport gives you fast-track access to partner company interviews.</p>
+                
+                <button onclick="downloadPassport()" class="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 shadow-lg shadow-indigo-200">
+                    <i data-lucide="download" class="w-4 h-4"></i> Download Digital ID
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Companies Waitlist Modal -->
+    <div id="companies-modal" class="fixed inset-0 z-[115] flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 modal-overlay">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform scale-95 transition-transform duration-300 modal-content" id="companies-content-box">
+            <button onclick="closeCompaniesModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 bg-slate-100 rounded-full p-2 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="building-2" class="text-blue-600 w-8 h-8"></i>
+                </div>
+                <div class="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Coming Soon</div>
+                <h3 class="text-2xl font-black mb-2 text-slate-900">Partner Companies Hub</h3>
+                <p class="text-slate-500 mb-6 text-sm leading-relaxed">
+                    Explore detailed profiles of 500+ tech companies hiring exclusively through Proctorix verified assessments. 
+                </p>
+                
+                <div class="bg-slate-50 p-4 rounded-xl text-left border border-slate-100 mb-6">
+                    <h4 class="font-bold text-slate-900 text-sm mb-2">What to expect:</h4>
+                    <ul class="text-xs text-slate-600 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-green-500"></i> Direct HR contact details</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-green-500"></i> Company-specific tech stacks</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-green-500"></i> Interview process breakdowns</li>
+                    </ul>
+                </div>
+
+                <form onsubmit="handleWaitlistSubmit(event, 'companies-submit-btn')" class="space-y-4">
+                    <input type="hidden" name="form_type" value="companies_waitlist">
+                    <div class="relative">
+                        <i data-lucide="mail" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="email" name="email" placeholder="Your Email Address" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <button type="submit" id="companies-submit-btn" class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg flex justify-center items-center gap-2">
+                        Join the Waitlist
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Advice Modal -->
+    <div id="career-modal" class="fixed inset-0 z-[115] flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 modal-overlay">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform scale-95 transition-transform duration-300 modal-content" id="career-content-box">
+            <button onclick="closeCareerModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 bg-slate-100 rounded-full p-2 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="trending-up" class="text-emerald-600 w-8 h-8"></i>
+                </div>
+                <div class="inline-block bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Launching Soon</div>
+                <h3 class="text-2xl font-black mb-2 text-slate-900">Career Growth Hub</h3>
+                <p class="text-slate-500 mb-6 text-sm leading-relaxed">
+                    Expert guides on passing AI proctored exams, improving communication test scores, and mastering live coding interviews.
+                </p>
+
+                <form onsubmit="handleWaitlistSubmit(event, 'career-submit-btn')" class="space-y-4 mt-6">
+                    <input type="hidden" name="form_type" value="career_newsletter">
+                    <div class="relative">
+                        <i data-lucide="mail" class="w-5 h-5 absolute left-3 top-3.5 text-slate-400"></i>
+                        <input type="email" name="email" placeholder="Your Email Address" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none">
+                    </div>
+                    <button type="submit" id="career-submit-btn" class="w-full bg-emerald-600 text-white py-3.5 rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-lg flex justify-center items-center gap-2">
+                        Subscribe to Updates
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coming Soon Modal (Global Catch-all) -->
+    <div id="coming-soon-modal" class="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 modal-overlay">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform scale-95 transition-transform duration-300 modal-content" id="coming-soon-content-box">
+            <button onclick="closeComingSoonModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 bg-slate-100 rounded-full p-2 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-3 shadow-inner">
+                    <i data-lucide="rocket" class="text-indigo-600 w-10 h-10"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-2 text-slate-900">Under Development!</h3>
+                <p class="text-slate-500 mb-8 text-md leading-relaxed">
+                    Our entire engineering team is actively building the full-fledged application. These features will be released very soon!
+                </p>
+                <div class="p-4 bg-slate-50 rounded-2xl text-center border border-slate-100 mb-6">
+                    <p class="text-slate-700 font-medium flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-indigo-500"></i>
+                        Thank you for your interest. Stay tuned!
+                    </p>
+                </div>
+                <button onclick="closeComingSoonModal()" class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-600 transition-all shadow-xl">
+                    Got it, thanks!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Formspree API Submission Helper
+        async function submitToFormspree(formElement, btnElement, originalBtnText) {
+            btnElement.disabled = true;
+            btnElement.classList.add('opacity-70', 'cursor-not-allowed');
+            btnElement.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Processing...`;
+            lucide.createIcons();
+
+            const formData = new FormData(formElement);
+            try {
+                await fetch('https://formspree.io/f/mdalvqap', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+            } catch (error) {
+                console.error('Submission failed', error);
+            }
+
+            btnElement.disabled = false;
+            btnElement.classList.remove('opacity-70', 'cursor-not-allowed');
+            btnElement.innerHTML = originalBtnText;
+            lucide.createIcons();
+            return true; // We proceed regardless to show the UX
+        }
+
+        // ----------------------------------------
+        // AUTH MODAL LOGIC (Login / Register)
+        // ----------------------------------------
+        function openAuthModal(type) {
+            const modal = document.getElementById('auth-modal');
+            const contentBox = document.getElementById('auth-content-box');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth; // trigger reflow
+            modal.classList.remove('opacity-0');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+            
+            switchAuthTab(type);
+        }
+
+        function closeAuthModal() {
+            const modal = document.getElementById('auth-modal');
+            const contentBox = document.getElementById('auth-content-box');
+            modal.classList.add('opacity-0');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        function switchAuthTab(type) {
+            const btnLogin = document.getElementById('tab-login');
+            const btnRegister = document.getElementById('tab-register');
+            const registerFields = document.getElementById('register-fields');
+            const title = document.getElementById('auth-title');
+            const desc = document.getElementById('auth-desc');
+            const formType = document.getElementById('auth-form-type');
+            
+            const authName = document.getElementById('auth-name');
+            const authPhone = document.getElementById('auth-phone');
+
+            if (type === 'login') {
+                btnLogin.className = "flex-1 py-2 text-sm font-bold rounded-lg bg-white shadow text-slate-900 transition-all";
+                btnRegister.className = "flex-1 py-2 text-sm font-bold rounded-lg text-slate-500 hover:text-slate-900 transition-all";
+                registerFields.classList.add('hidden');
+                authName.removeAttribute('required');
+                authPhone.removeAttribute('required');
+                title.innerText = "Welcome Back";
+                desc.innerText = "Enter your details to access your account.";
+                formType.value = "login";
+            } else {
+                btnRegister.className = "flex-1 py-2 text-sm font-bold rounded-lg bg-white shadow text-slate-900 transition-all";
+                btnLogin.className = "flex-1 py-2 text-sm font-bold rounded-lg text-slate-500 hover:text-slate-900 transition-all";
+                registerFields.classList.remove('hidden');
+                authName.setAttribute('required', 'true');
+                authPhone.setAttribute('required', 'true');
+                title.innerText = "Create Account";
+                desc.innerText = "Join the most secure hiring ecosystem.";
+                formType.value = "register";
+            }
+        }
+
+        async function handleAuthSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('auth-submit-btn');
+            await submitToFormspree(e.target, btn, "Continue");
+            closeAuthModal();
+            setTimeout(() => { openComingSoonModal(); }, 300); // Show under development popup
+        }
+
+        // ----------------------------------------
+        // PASSPORT MODAL LOGIC
+        // ----------------------------------------
+        function openPassportModal() {
+            const modal = document.getElementById('passport-modal');
+            const contentBox = document.getElementById('passport-content-box');
+            
+            // Reset to step 1
+            document.getElementById('passport-step-1').classList.remove('hidden');
+            document.getElementById('passport-step-2').classList.add('hidden');
+            document.getElementById('passport-form').reset();
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+        }
+
+        function closePassportModal() {
+            const modal = document.getElementById('passport-modal');
+            const contentBox = document.getElementById('passport-content-box');
+            modal.classList.add('opacity-0');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        async function handlePassportSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('passport-submit-btn');
+            const name = document.getElementById('pp-name').value;
+            const skill = document.getElementById('pp-skill').value;
+            const exp = document.getElementById('pp-exp').value.split(' ')[0] + " Level"; // Extract "Entry Level"
+            
+            // Send to Formspree
+            await submitToFormspree(e.target, btn, "Generate Passport");
+
+            // Populate Step 2 UI
+            document.getElementById('pp-display-name').innerText = name;
+            document.getElementById('pp-display-skill').innerText = skill;
+            document.getElementById('pp-display-exp').innerText = exp;
+            
+            // Generate initials for avatar (up to 2 chars)
+            const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+            document.getElementById('pp-avatar').innerText = initials;
+            
+            // Generate mock ID
+            document.getElementById('pp-random-id').innerText = Math.floor(1000 + Math.random() * 9000) + '-' + String.fromCharCode(65 + Math.floor(Math.random() * 26));
+
+            // Generate Dates
+            const today = new Date();
+            const expiry = new Date();
+            expiry.setFullYear(today.getFullYear() + 2); // Valid for 2 years
+            
+            document.getElementById('pp-issue-date').innerText = today.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            document.getElementById('pp-expiry-date').innerText = expiry.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+            // Switch Views
+            document.getElementById('passport-step-1').classList.add('hidden');
+            document.getElementById('passport-step-2').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function downloadPassport() {
+            closePassportModal();
+            setTimeout(() => { openComingSoonModal(); }, 300); // Because feature is under dev
+        }
+
+        // ----------------------------------------
+        // COMPANIES & CAREER MODALS
+        // ----------------------------------------
+        function openCompaniesModal(e) {
+            if(e) e.preventDefault();
+            const modal = document.getElementById('companies-modal');
+            const contentBox = document.getElementById('companies-content-box');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+        }
+
+        function closeCompaniesModal() {
+            const modal = document.getElementById('companies-modal');
+            const contentBox = document.getElementById('companies-content-box');
+            modal.classList.add('opacity-0');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        function openCareerModal(e) {
+            if(e) e.preventDefault();
+            const modal = document.getElementById('career-modal');
+            const contentBox = document.getElementById('career-content-box');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+        }
+
+        function closeCareerModal() {
+            const modal = document.getElementById('career-modal');
+            const contentBox = document.getElementById('career-content-box');
+            modal.classList.add('opacity-0');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        async function handleWaitlistSubmit(e, btnId) {
+            e.preventDefault();
+            const btn = document.getElementById(btnId);
+            const originalText = btn.innerText;
+            await submitToFormspree(e.target, btn, originalText);
+            
+            // Close specific modal and open global under development modal
+            if(btnId === 'companies-submit-btn') closeCompaniesModal();
+            if(btnId === 'career-submit-btn') closeCareerModal();
+            
+            setTimeout(() => { openComingSoonModal(); }, 300);
+        }
+
+        // ----------------------------------------
+        // COMING SOON MODAL (Catch-All)
+        // ----------------------------------------
+        function openComingSoonModal(e) {
+            if(e) e.preventDefault();
+            const modal = document.getElementById('coming-soon-modal');
+            const contentBox = document.getElementById('coming-soon-content-box');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+        }
+
+        function closeComingSoonModal() {
+            const modal = document.getElementById('coming-soon-modal');
+            const contentBox = document.getElementById('coming-soon-content-box');
+            modal.classList.add('opacity-0');
+            contentBox.classList.remove('scale-100');
+            contentBox.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        // ----------------------------------------
+        // INITIALIZATION
+        // ----------------------------------------
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // Preloader Logic
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.transform = 'translateY(-100%)';
+                setTimeout(() => preloader.style.display = 'none', 800);
+            }, 1500);
+
+            // Navbar Glass Effect on Scroll
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 20) {
+                    nav.classList.add('shadow-sm');
+                    nav.style.background = 'rgba(255, 255, 255, 0.85)';
+                } else {
+                    nav.classList.remove('shadow-sm');
+                    nav.style.background = 'rgba(255, 255, 255, 0.5)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
