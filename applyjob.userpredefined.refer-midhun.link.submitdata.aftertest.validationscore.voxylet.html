@@ -65,11 +65,11 @@
                     <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span class="text-xl font-bold text-brand-900 tracking-tight">NexusCorp</span>
+                <span class="text-xl font-bold text-brand-900 tracking-tight">Careers</span>
             </div>
             <nav class="hidden md:flex gap-6">
-                <a href="#" class="text-sm font-medium text-gray-500 hover:text-brand-600 transition">Our Culture</a>
-                <a href="#" class="text-sm font-medium text-gray-500 hover:text-brand-600 transition">Benefits</a>
+                <a href="#" onclick="openModal('culture'); return false;" class="text-sm font-medium text-gray-500 hover:text-brand-600 transition">Our Culture</a>
+                <a href="#" onclick="openModal('benefits'); return false;" class="text-sm font-medium text-gray-500 hover:text-brand-600 transition">Benefits</a>
                 <a href="#" class="text-sm font-medium text-brand-600 transition">Open Roles</a>
             </nav>
         </div>
@@ -128,7 +128,7 @@
             </div>
 
             <div class="relative z-10 mt-12 pt-8 border-t border-gray-700">
-                <p class="text-sm text-gray-400">Join 500+ employees globally.</p>
+                <p class="text-sm text-gray-400">Join our growing global team.</p>
                 <div class="flex -space-x-2 mt-3">
                     <img class="inline-block h-8 w-8 rounded-full ring-2 ring-brand-900" src="https://i.pravatar.cc/100?img=1" alt=""/>
                     <img class="inline-block h-8 w-8 rounded-full ring-2 ring-brand-900" src="https://i.pravatar.cc/100?img=2" alt=""/>
@@ -151,7 +151,7 @@
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">Application Received!</h2>
-                <p class="text-gray-500 mb-8 max-w-md">Thank you for applying to NexusCorp. We've received your details and our talent team will review your profile shortly.</p>
+                <p class="text-gray-500 mb-8 max-w-md">Thank you for applying. We've received your details and our talent team will review your profile shortly.</p>
                 <button onclick="resetForm()" class="text-brand-600 font-medium hover:text-brand-700 transition">Submit another application</button>
             </div>
 
@@ -286,7 +286,7 @@
                         </svg>
                     </button>
                     <p class="text-xs text-center text-gray-500 mt-4">
-                        By submitting, you agree to our <a href="#" class="text-brand-600 hover:underline">Privacy Policy</a>.
+                        By submitting, you agree to our <a href="#" onclick="openModal('privacy'); return false;" class="text-brand-600 hover:underline">Privacy Policy</a>.
                     </p>
                 </div>
             </form>
@@ -295,11 +295,101 @@
 
     <!-- Footer -->
     <footer class="mt-auto py-6 text-center">
-        <p class="text-sm text-gray-500">&copy; 2026 NexusCorp Inc. All rights reserved.</p>
+        <p class="text-sm text-gray-500">&copy; 2026 All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Form Submission via AJAX -->
+    <!-- Info Modal (Hidden by default) -->
+    <div id="info-modal" class="hidden fixed inset-0 bg-gray-900/40 z-50 flex items-center justify-center backdrop-blur-sm px-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden transform scale-95 transition-transform duration-300" id="modal-panel">
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                <h3 id="modal-title" class="text-lg font-bold text-gray-900">Title</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg p-1">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="px-6 py-6">
+                <div id="modal-content" class="text-sm text-gray-600 leading-relaxed space-y-3">
+                    <!-- Content injected via JS -->
+                </div>
+            </div>
+            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 text-right">
+                <button onclick="closeModal()" class="bg-gray-800 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactions & Form Submission -->
     <script>
+        // --- Modal Logic ---
+        const modal = document.getElementById('info-modal');
+        const modalPanel = document.getElementById('modal-panel');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+
+        const modalData = {
+            culture: {
+                title: "Our Culture",
+                content: `
+                    <p>We foster a culture of continuous learning, diversity, and radical candor. Our team members are encouraged to take ownership, experiment with bold ideas, and support each other's growth in a highly collaborative environment.</p>
+                    <p>We believe that the best work happens when people feel valued, respected, and empowered to bring their authentic selves to work every single day.</p>
+                `
+            },
+            benefits: {
+                title: "Benefits & Perks",
+                content: `
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Flexible Work:</strong> 100% remote options and flexible schedules.</li>
+                        <li><strong>Premium Health:</strong> Top-tier medical, dental, and vision coverage for you and your dependents.</li>
+                        <li><strong>Time Off:</strong> Generous PTO, mental health days, and paid parental leave.</li>
+                        <li><strong>Growth:</strong> Annual learning & development stipend for courses and conferences.</li>
+                        <li><strong>Workspace:</strong> Budget for your ideal home office setup.</li>
+                    </ul>
+                `
+            },
+            privacy: {
+                title: "Privacy Policy",
+                content: `
+                    <p>We take your privacy seriously. Any personal information submitted through this application form is encrypted and used <strong>solely for the purpose of evaluating your candidacy</strong> for employment.</p>
+                    <p>We do not sell, rent, or share your data with third-party marketers. Your application details are stored securely and are only accessible by our internal talent acquisition and hiring teams.</p>
+                `
+            }
+        };
+
+        function openModal(type) {
+            modalTitle.innerText = modalData[type].title;
+            modalContent.innerHTML = modalData[type].content;
+            
+            // Show modal and trigger animations
+            modal.classList.remove('hidden');
+            // Small delay to allow display:block to apply before animating opacity
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalPanel.classList.remove('scale-95');
+                modalPanel.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            // Reverse animations
+            modal.classList.add('opacity-0');
+            modalPanel.classList.remove('scale-100');
+            modalPanel.classList.add('scale-95');
+            
+            // Hide after animation completes
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close modal when clicking outside of the panel
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+
+        // --- Form Submission Logic ---
         const form = document.getElementById('job-application-form');
         const submitBtn = document.getElementById('submit-btn');
         const submitSpinner = document.getElementById('submit-spinner');
@@ -309,37 +399,32 @@
         const errorMessage = document.getElementById('form-error');
 
         form.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Prevent standard redirect
+            e.preventDefault(); 
 
-            // UI updating: Set loading state
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
             btnText.innerText = 'Submitting...';
             submitSpinner.classList.remove('hidden');
             errorMessage.classList.add('hidden');
 
-            // Gather data
             const formData = new FormData(form);
 
             try {
-                // Send to Formspree endpoint
                 const response = await fetch(form.action, {
                     method: form.method,
                     body: formData,
                     headers: {
-                        'Accept': 'application/json' // Request JSON response, not redirect
+                        'Accept': 'application/json' 
                     }
                 });
 
                 if (response.ok) {
-                    // Success! Hide form, show success message
                     form.classList.add('hidden');
                     formHeader.classList.add('hidden');
                     successMessage.classList.remove('hidden');
                     successMessage.classList.add('flex');
-                    form.reset(); // Clear form for next time
+                    form.reset(); 
                 } else {
-                    // Formspree returned an error
                     const data = await response.json();
                     if (Object.hasOwn(data, 'errors')) {
                         errorMessage.innerText = data.errors.map(error => error.message).join(", ");
@@ -349,11 +434,9 @@
                     errorMessage.classList.remove('hidden');
                 }
             } catch (error) {
-                // Network error
                 errorMessage.innerText = "Network error. Please check your connection and try again.";
                 errorMessage.classList.remove('hidden');
             } finally {
-                // UI updating: Remove loading state
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
                 btnText.innerText = 'Submit Application';
@@ -361,7 +444,6 @@
             }
         });
 
-        // Function to reset the view and submit another application
         function resetForm() {
             successMessage.classList.add('hidden');
             successMessage.classList.remove('flex');
